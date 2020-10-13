@@ -4,21 +4,27 @@ public class CalculaValor {
 
 	public static void main(String[] args) {
 		/*
-		 * Crie um programa que lê, do console, o nome e o sobrenome de uma pessoa e
-		 * depois imprime o nome completo. Para isso, você vai precisar de duas
-		 * variáveis: a primeira você pode chamar de "nome" e a segunda de "sobrenome".
-		 * Por último, você vai juntar o nome e o sobrenome em uma única impressão.
+		 * O seu programa deve receber a nota do aluno pelo console e depois você vai
+		 * fazer uma operação lógica para saber se a nota do aluno é maior que 70. O
+		 * resultado dessa operação lógica deve ser atribuido a uma variável do tipo
+		 * Boolean.
+		 * 
+		 * Por último, você deve utilizar a variável do tipo Boolean com a estrutura de
+		 * decisão if para imprimir, no console, uma mensagem que vai dizer se o aluno
+		 * passou ou não passou.
 		 */
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Faça a impressão do nome e do sobrenome da pessoa");
-		System.out.print("Digite o nome: ");
-		String nome = scanner.nextLine();
+		System.out.println("Programa que informa se o aluno passou de ano");
+		System.out.print("Digite a nota: ");
+		Double nota = scanner.nextDouble();
 
-		System.out.print("Digite o sobrenome: ");
-		String sobrenome = scanner.nextLine();
+		boolean aprovado = nota >= 7;
+		if(aprovado ) {
+			System.out.print("Aprovado");
+		} else {
+			System.out.print("Reprovado");
+		}
 		
-		System.out.println("Nome completo: " + nome + " " +sobrenome);
-
 		scanner.close();
 	}
 }
