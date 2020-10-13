@@ -4,27 +4,40 @@ public class CalculaValor {
 
 	public static void main(String[] args) {
 		/*
-		 * O seu programa deve receber a nota do aluno pelo console e depois você vai
-		 * fazer uma operação lógica para saber se a nota do aluno é maior que 70. O
-		 * resultado dessa operação lógica deve ser atribuido a uma variável do tipo
-		 * Boolean.
+		 * Crie um programa que vai receber do usuário o valor do produto e a quantidade
+		 * do produto que se deseja. Com essas informações encontre o subtotal que será
+		 * o valor do produto multiplicado pela quantidade.
 		 * 
-		 * Por último, você deve utilizar a variável do tipo Boolean com a estrutura de
-		 * decisão if para imprimir, no console, uma mensagem que vai dizer se o aluno
-		 * passou ou não passou.
+		 * Depois você vai precisar usar uma estrutura de decisão. Se a quantidade
+		 * desejada do produto for maior que 10 unidades, vai ser preciso dar um
+		 * desconto de 10% em cima do subtotal, mas se for menor que 10, você NÃO aplica
+		 * desconto algum.
+		 * 
+		 * Para encontrar o valor referente ao percentual de desconto (que vai ser 0% ou
+		 * 10%, dependendo da quantidade) você multiplica o subtotal pelo próprio
+		 * percentual e divide tudo por 100.
+		 * 
+		 * Tendo o valor referente ao percentual de desconto, você vai retirar esse
+		 * valor do subtotal. O que sobrar será o valor total final e deverá ser
+		 * apresentado no console.
 		 */
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Programa que informa se o aluno passou de ano");
-		System.out.print("Digite a nota: ");
-		Double nota = scanner.nextDouble();
+		System.out.println("Encontre o valor total baseado na quantidade e no desconto");
+		System.out.print("Digite o valor do produto: ");
+		Double valor = scanner.nextDouble();
 
-		boolean aprovado = nota >= 7;
-		if(aprovado ) {
-			System.out.print("Aprovado");
-		} else {
-			System.out.print("Reprovado");
-		}
+		System.out.print("Digite Quantidade: ");
+		Integer qtd = scanner.nextInt();
 		
+		Double subtotal = valor * qtd;
+		
+		boolean desconto = qtd > 10;
+		
+		if (desconto) {
+			subtotal -= subtotal * 10 / 100; 
+		}
+
+		System.out.println("Total a pagar: " + subtotal);
 		scanner.close();
 	}
 }
