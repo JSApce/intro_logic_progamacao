@@ -4,22 +4,43 @@ public class CalculaValor {
 
 	public static void main(String[] args) {
 		/*
-		 * Crie um programa que receba o valor de um produto e exiba o valor final da
-		 * compra. Esse valor final será o valor do produto mais o valor do frete - use
-		 * o valor do frete como R$15,00. Uma compra de, por exemplo, R$80,00, teria um
-		 * valor final de R$95,00.
+		 * Faça um programa que receba:
 		 * 
-		 * Agora, caso a compra seja maior ou igual a R$100,00, então não cobre o frete.
+		 * O valor da conta de luz Conta de água Conta de telefone Escola do filho
+		 * Fatura do cartão Gastos com supermercado ... e mostre o gasto total que a
+		 * família teve no mês. Não esqueça de usar muito o operador "+=".
 		 */
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Desconto de frete em compras acima de R$100,00");
-		System.out.print("Digite o valor da compra: ");
-		Double valor = scanner.nextDouble();
-
-		if (valor < 100) {
-			valor += 15.0;
-		}
-		System.out.println("Total (valor + frete): " + valor);
+		
+		Double total = 0.0;
+		
+		System.out.println("Cálculo de gastos familiar");
+		System.out.print("Conta de energia: ");
+		Double energia = scanner.nextDouble();
+		total += energia;
+		
+		System.out.print("Conta de água: ");
+		Double agua = scanner.nextDouble();
+		total += agua;
+		
+		System.out.print("Conta de telefone: ");
+		Double telefone = scanner.nextDouble();
+		total += telefone;
+		
+		System.out.print("Conta de escola: ");
+		Double escola = scanner.nextDouble();
+		total += escola;
+		
+		System.out.print("Conta de cartão: ");
+		Double cartao = scanner.nextDouble();
+		total += cartao;
+		
+		System.out.print("Conta de supermercado: ");
+		Double supermercado = scanner.nextDouble();
+		total += supermercado;
+		
+		
+		System.out.println("Total: " + total);
 
 		scanner.close();
 	}
