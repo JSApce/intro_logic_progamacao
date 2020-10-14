@@ -4,44 +4,22 @@ public class CalculaValor {
 
 	public static void main(String[] args) {
 		/*
-		 * Para criar uma calculadora simples você vai precisar receber três informações
-		 * pelo console. São os dois números que participarão da operação e também a
-		 * operação que será realizada.
+		 * Crie um programa que receba o valor de um produto e exiba o valor final da
+		 * compra. Esse valor final será o valor do produto mais o valor do frete - use
+		 * o valor do frete como R$15,00. Uma compra de, por exemplo, R$80,00, teria um
+		 * valor final de R$95,00.
 		 * 
-		 * Você vai receber o primeiro número, depois vai receber qual é a operação e,
-		 * por último, o segundo número.
-		 * 
-		 * Para os números que você vai receber pelo console, pode utilizar a mesma
-		 * funcionalidade que já utilizamos aqui no curso - o *Scanner*. Para receber a
-		 * operação você pode receber também um número que vai indicar a mesma. Por
-		 * exemplo, o número 1 será adição, o 2 subtração, o 3 multiplicação e o 4
-		 * divisão.
-		 * 
-		 * Com esses três valores - os dois números e qual será a operação - você pode
-		 * utilizar a estrutura de decisão if para só realizar a operação que o usuário
-		 * escolheu. Se estiver com dúvidas, então volte a aula onde falamos sobre
-		 * alteração do valor de uma variável - aula 3.10.
+		 * Agora, caso a compra seja maior ou igual a R$100,00, então não cobre o frete.
 		 */
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Calculadora simples");
-		System.out.print("Digite o primeiro número: ");
-		Double primeiroNumero = scanner.nextDouble();
+		System.out.println("Desconto de frete em compras acima de R$100,00");
+		System.out.print("Digite o valor da compra: ");
+		Double valor = scanner.nextDouble();
 
-		System.out.print("Escolha: [1 - Adição, 2 - subtração, 3 - multiplicação, 4 - divisão]: ");
-		Integer operador = scanner.nextInt();
-
-		System.out.print("Digite o segundo número: ");
-		Double segundoNumero = scanner.nextDouble();
-
-		if (operador == 1) {
-			System.out.println("Soma: " + (primeiroNumero + segundoNumero));
-		} else if (operador == 2) {
-			System.out.println("Subtração: " + (primeiroNumero - segundoNumero));
-		} else if (operador == 3) {
-			System.out.println("Multiplicação: " + (primeiroNumero * segundoNumero));
-		} else {
-			System.out.println("Divisão: " + (primeiroNumero / segundoNumero));
+		if (valor < 100) {
+			valor += 15.0;
 		}
+		System.out.println("Total (valor + frete): " + valor);
 
 		scanner.close();
 	}
