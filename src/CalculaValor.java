@@ -4,40 +4,45 @@ public class CalculaValor {
 
 	public static void main(String[] args) {
 		/*
-		 * Crie um programa que vai receber do usuário o valor do produto e a quantidade
-		 * do produto que se deseja. Com essas informações encontre o subtotal que será
-		 * o valor do produto multiplicado pela quantidade.
+		 * Para criar uma calculadora simples você vai precisar receber três informações
+		 * pelo console. São os dois números que participarão da operação e também a
+		 * operação que será realizada.
 		 * 
-		 * Depois você vai precisar usar uma estrutura de decisão. Se a quantidade
-		 * desejada do produto for maior que 10 unidades, vai ser preciso dar um
-		 * desconto de 10% em cima do subtotal, mas se for menor que 10, você NÃO aplica
-		 * desconto algum.
+		 * Você vai receber o primeiro número, depois vai receber qual é a operação e,
+		 * por último, o segundo número.
 		 * 
-		 * Para encontrar o valor referente ao percentual de desconto (que vai ser 0% ou
-		 * 10%, dependendo da quantidade) você multiplica o subtotal pelo próprio
-		 * percentual e divide tudo por 100.
+		 * Para os números que você vai receber pelo console, pode utilizar a mesma
+		 * funcionalidade que já utilizamos aqui no curso - o *Scanner*. Para receber a
+		 * operação você pode receber também um número que vai indicar a mesma. Por
+		 * exemplo, o número 1 será adição, o 2 subtração, o 3 multiplicação e o 4
+		 * divisão.
 		 * 
-		 * Tendo o valor referente ao percentual de desconto, você vai retirar esse
-		 * valor do subtotal. O que sobrar será o valor total final e deverá ser
-		 * apresentado no console.
+		 * Com esses três valores - os dois números e qual será a operação - você pode
+		 * utilizar a estrutura de decisão if para só realizar a operação que o usuário
+		 * escolheu. Se estiver com dúvidas, então volte a aula onde falamos sobre
+		 * alteração do valor de uma variável - aula 3.10.
 		 */
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Encontre o valor total baseado na quantidade e no desconto");
-		System.out.print("Digite o valor do produto: ");
-		Double valor = scanner.nextDouble();
+		System.out.println("Calculadora simples");
+		System.out.print("Digite o primeiro número: ");
+		Double primeiroNumero = scanner.nextDouble();
 
-		System.out.print("Digite Quantidade: ");
-		Integer qtd = scanner.nextInt();
-		
-		Double subtotal = valor * qtd;
-		
-		boolean desconto = qtd > 10;
-		
-		if (desconto) {
-			subtotal -= subtotal * 10 / 100; 
+		System.out.print("Escolha: [1 - Adição, 2 - subtração, 3 - multiplicação, 4 - divisão]: ");
+		Integer operador = scanner.nextInt();
+
+		System.out.print("Digite o segundo número: ");
+		Double segundoNumero = scanner.nextDouble();
+
+		if (operador == 1) {
+			System.out.println("Soma: " + (primeiroNumero + segundoNumero));
+		} else if (operador == 2) {
+			System.out.println("Subtração: " + (primeiroNumero - segundoNumero));
+		} else if (operador == 3) {
+			System.out.println("Multiplicação: " + (primeiroNumero * segundoNumero));
+		} else {
+			System.out.println("Divisão: " + (primeiroNumero / segundoNumero));
 		}
 
-		System.out.println("Total a pagar: " + subtotal);
 		scanner.close();
 	}
 }
