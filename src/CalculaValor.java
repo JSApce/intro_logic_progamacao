@@ -4,35 +4,46 @@ public class CalculaValor {
 
 	public static void main(String[] args) {
 		/*
-		 * Crie um programa que vai receber as notas que uma pessoa tirou nas duas
-		 * materias de sua prova. Serão dois parâmetros para receber um para receber a
-		 * nota de português e outro para receber as de matemática.
+		 * Pense em uma empresa fictícia que todo o mês de Janeiro premia seus
+		 * funcionários com um bônus, caso a meta seja alcançada.
 		 * 
-		 * A prova, no total, vale 200 pontos - 100 para cada matéria. A nota mínima
-		 * total para passar é igual ou maior que 150. Entretanto, o candidato não pode
-		 * tirar menos do que 60 pontos em qualquer uma das duas matérias, ou seja, se
-		 * tirar 59 em português e 100 em matemática (totalizando uma nota maior do que
-		 * o total necessário que é 150) ele não conseguirá a vaga.
+		 * Crie um programa que receba 3 parâmetros. O primeiro será a meta de
+		 * faturamento anual da empresa para o ano que passou. Depois, receba o
+		 * parâmetro referente ao faturamento real da empresa no ultimo ano. Por último,
+		 * receba a média salarial do funcionário(a) para o ano anterior (não precisa
+		 * fazer cálculo de média salarial, já que estamos trabalhando com um algoritmo
+		 * fictício - na hora de informar esse parâmetro, invente um valor qualquer para
+		 * representar essa média salarial).
 		 * 
-		 * No final mostre para o candidato se ele conseguiu ou não.
+		 * Nessa empresa fictícia, se o faturamento real for igual ou maior que a meta
+		 * de faturamento anual, então os funcionários ganharam um bônus que será igual
+		 * a média salarial deles no último ano. 
+		 * Caso o faturamento seja menor que a meta, mas, seja maior ou igual a 80% do valor da meta, então eles receberão
+		 * também 80% de sua média salarial.
+		 * 
+		 * No final, mostre de quanto será o prêmio desse funcionário(a).
 		 */
 		Scanner scanner = new Scanner(System.in);
 
-		System.out.println("Verificar se a pessoa passou no concurso público");
-		System.out.print("Nota de português: ");
-		Integer notaDePortugues = scanner.nextInt();
+		System.out.println("Calcule o bônus do funcionário(a)");
+		System.out.print("Meta de faturamento anual: ");
+		Double metaAnual = scanner.nextDouble();
 
-		System.out.print("Nota de matemática: ");
-		Integer NotaDeMatematica = scanner.nextInt();
+		System.out.print("Faturamneto real: ");
+		Double faturamentoAnual = scanner.nextDouble();
 		
-		Boolean notaMaxima = (notaDePortugues + NotaDeMatematica) >= 150;
-		Boolean notaMinimaPortugues = notaDePortugues >= 60;
-		Boolean notaMinimaMatematica = NotaDeMatematica >= 60;
-		
-		if (notaMaxima && notaMinimaPortugues && notaMinimaMatematica) {
-			System.out.print("Aprovado");
+		System.out.print("Média anual de salario do funcionário(a): ");
+		Double mediaSalarial = scanner.nextDouble();
+
+		if (faturamentoAnual >= metaAnual) {
+			
+			System.out.print("Bônus de 100%: " + mediaSalarial);
+			
+		} else if(faturamentoAnual >= (metaAnual*0.8)){
+			
+			System.out.println("Bônus de 80%: " + (mediaSalarial * 0.8));
 		} else {
-			System.out.println("Não aprovado");
+			System.out.println("Sem bônus!");
 		}
 
 		scanner.close();
