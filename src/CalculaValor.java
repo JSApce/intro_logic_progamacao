@@ -1,50 +1,24 @@
-import java.util.Scanner;
-
 public class CalculaValor {
 
 	public static void main(String[] args) {
 		/*
-		 * Crie um programa que vai receber um número que será referente ao dia da
-		 * semana (de 1 até 7). Dependendo do número informado você deve imprimir o nome
-		 * desse dia.
+		 * Dada a lista de números abaixo:
 		 * 
-		 * Se o número 1 for informado, então deverá ser impresso "domingo", se 2, então
-		 * "segunda-feira" e por ai vai.
+		 * Integer[] numeros = new Integer[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
+		 * 13, 14, 15, 16, 17, 18, 19, 20 };
+		 * 
+		 * ... Itere por essa lista e imprima todos os números que são divisíveis por 3.
+		 * 
+		 * Para descobrir se um número é divisível por 3, você pode utilizar o operador
+		 * módulo. Toda vez que o módulo de um número por 3 for igual a zero, então esse
+		 * número e divisível por 3.
 		 */
-		Scanner scanner = new Scanner(System.in);
+		Integer[] numeros = new Integer[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
 
-		System.out.println("Informe o número dia da semana: ");
-		int numeroDaSemana = scanner.nextInt();
-
-		switch (numeroDaSemana) {
-			case 1:
-				System.out.println("Domingo");
-				break;
-			case 2:
-				System.out.println("Segunda-feira");
-				break;
-			case 3:
-				System.out.println("Terça-feira");
-				break;
-			case 4:
-				System.out.println("Quarta-feira");
-				break;
-			case 5:
-				System.out.println("Quinta-feira");
-				break;
-			case 6:
-				System.out.println("Sexta-feira");
-				break;
-			case 7:
-				System.out.println("Sábado");
-				break;
-			default:
-				System.err.println("Número inválido: " + numeroDaSemana);
-				break;
+		for(int i = 0; i < numeros.length; i++) {
+			if(numeros[i]%3 == 0) {
+				System.out.println(numeros[i]);
+			}
 		}
-
-		
-
-		scanner.close();
 	}
 }
